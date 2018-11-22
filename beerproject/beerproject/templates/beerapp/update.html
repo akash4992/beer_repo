@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'beerapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="container" align="center">
+    <h1>Add New Beer</h1>
+
+
+
+<form method="post">
+    {% csrf_token %}
+   Beer Id &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="text" name="bno" value="{{beer.id}}"><br><br>
+   Beer Name &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="bname" value="{{beer.bname}}"><br><br>
+  Beer Color &nbsp;&nbsp;&nbsp; <input type="text" name="color" value="{{beer.color}}"><br><br>
+    Beer Loc<input type="text" name="bloc" value="{{beer.bloc}}"><br><br>
+      Alcholic<input type="text" name="alcholic" value="{{beer.alcholic}}"><br><br>
+    <input type="submit" value="Update Record" class="btn btn-warning">
+
+</form>
+{% endblock %}
+
+
+

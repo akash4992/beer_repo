@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'beerapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="container" align="center">
+    <div class="jumbotron">
+  <h1 class="display-4">BeerBar</h1>
+   <h1>Choose The Option </h1>
+
+
+           <td><a href="/update/(?P<id>\d+)">Update</a>
+           <a href="/delete/{{b.id}}">Delete</a> </td>
+
+</div>
+
+</div>
+
+
+{% endblock %}

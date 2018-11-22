@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'beerapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<h1>Search your Beer Here </h1>
+
+    <form method="post">
+    {%csrf_token%}
+    <input type="text" name="srh" placeholder="Enter Beer">
+    <input type="submit" value="Sreach">
+</form>
+<div>
+    {% if messages %}
+    <ul>
+        {% for k in message %}
+        <li style="color:red;">{{k}}</li>
+    </ul>
+        {% endfor %}
+    {% endif %}
+</div>
+{% if sr %}
+     {% for k in sr %}
+         <table border="2" align="center">
+             <thead>
+                 <th>Name</th>
+                 <th>Color</th>
+                 </thead>
+             <tr>
+
+                  <td>{{k.bname}}</td>
+                    <td>{{k.color}}</td>
+             </tr>
+
+
+
+
+         </table>
+     {% endfor %}
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'beerapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="container" align="center">
+    <h1>Add New Beer</h1>
+<table border="2">
+        <form method="post">
+            {%csrf_token%}
+            {{ form}}
+
+
+
+
+    <br><br> <input type="submit" value="Add Beer" class="btn btn-danger">
+     </form>
+    </table>
+</div>
+
+
+{% endblock %}

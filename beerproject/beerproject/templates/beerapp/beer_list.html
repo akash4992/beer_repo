@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'beerapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="cotainer" align="center">
+<h1>welcome To BeerBar</h1>
+<h2>Here is A List Of Beer</h2>
+<table border="3" height="220px;" width="70%"  style="color:#db280d; font-size:24px; background:#a9c0e5;">
+    <thead>
+    <th>Beer No</th>
+     <th>Name</th>
+    <th>Color</th>
+    <th>Price</th>
+    <th>Alcoholic</th>
+    <th>Action</th>
+    </thead>
+    {% for b in beer %}
+    <tr>
+        <td>{{b.bno}}</td>
+        <td>{{b.bname}}</td>
+        <td>{{b.color}}</td>
+        <td>{{b.bloc}}</td>
+        <td>{{b.alcholic}}</td>
+
+          <td><a href="/update/{{b.id}}">Update</a>
+           <a href="/delete/{{b.id}}">Delete</a> </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+{% endblock %}
